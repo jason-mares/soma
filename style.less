@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+@primary: #FF4729;
+@secondary: #FFFFFF;
+
+
+html,
+body {
+    background-color: @primary;
+    margin: 0;
+    padding: 0;
+    color: @secondary;
+    font-size: 21px;
+    line-height: 1.618em;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    opacity: 1;
+    overflow: hidden;
+    height: 100dvh;
+    width: 100dvw;
+
+
+
+    * {
+        box-sizing: border-box;
+    }
+
+}
+
+.fade-in {
+    opacity: 0;
+    scale: 1.02;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-weight: normal;
+    line-height: 1.21em;
+}
+
+#logo {
+    max-width: 300px;
+    width: 60%;
+}
+
+.btn {
+    background-color: @primary;
+    padding: 1em 2em;
+    border: 1px solid @secondary;
+    margin: 1em 0;
+    display: inline-block;
+    text-decoration: none;
+    color: @secondary;
+    text-align: center;
+    filter: drop-shadow(5px 5px 0px @secondary);
+    transition: 0.23s ease-out all;
+    
+    * {
+        display: block;
+    }
+
+    &:hover {
+        background-color: @secondary;
+        color: @primary;
+        filter: drop-shadow(0px 0px 0px @secondary);
+        border-radius: 80px;
+    }
+
+}
+
+#page {
+    display: flex;
+    align-items: center;
+    overflow: auto !important;
+    height: 100vh;
+
+    > div {
+        width: 50%;
+        padding: 0 2em;
+
+        &#hero {
+            background: @primary url(images/woman-kayaking.webp) 50% 30%/cover no-repeat;
+            height: 100vh;
+        }
+
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #page > div:first-of-type {
+        padding: 0 5em 0 8em;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    html, body {
+        font-size: 18px;
+    }    
+}
+
+@media screen and (max-width: 800px) {
+
+    #page {
+        flex-direction: column;
+
+        > div {
+            width: 100%;
+            padding: 2em;
+
+            &#hero {
+                min-height: 300px;
+                height: 40vh;
+                background-position: 50% 20%;
+            }
+
+        }
+
+        &:first-of-type {
+            text-align: center;
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    #page > div {
+        padding: 2em 1em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.618em;
+    }
+}

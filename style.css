@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USew8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');
+}
+html,
+body {
+  background-color: #FF4729;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  font-size: 21px;
+  line-height: 1.618em;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  opacity: 1;
+  overflow: hidden;
+  height: 100dvh;
+  width: 100dvw;
+}
+html *,
+body * {
+  box-sizing: border-box;
+}
+.fade-in {
+  opacity: 0;
+  scale: 1.02;
+  animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+  line-height: 1.21em;
+}
+#logo {
+  max-width: 300px;
+  width: 60%;
+}
+.btn {
+  background-color: #FF4729;
+  padding: 1em 2em;
+  border: 1px solid #FFFFFF;
+  margin: 1em 0;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-align: center;
+  filter: drop-shadow(5px 5px 0px #FFFFFF);
+  transition: 0.23s ease-out all;
+}
+.btn * {
+  display: block;
+}
+.btn:hover {
+  background-color: #FFFFFF;
+  color: #FF4729;
+  filter: drop-shadow(0px 0px 0px #FFFFFF);
+  border-radius: 80px;
+}
+#page {
+  display: flex;
+  align-items: center;
+  overflow: auto !important;
+  height: 100vh;
+}
+#page > div {
+  width: 50%;
+  padding: 0 2em;
+}
+#page > div#hero {
+  background: #FF4729 url(images/woman-kayaking.webp) 50% 30% / cover no-repeat;
+  height: 100vh;
+}
+@media screen and (min-width: 1300px) {
+  #page > div:first-of-type {
+    padding: 0 5em 0 8em;
+  }
+}
+@media screen and (max-width: 950px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 800px) {
+  #page {
+    flex-direction: column;
+  }
+  #page > div {
+    width: 100%;
+    padding: 2em;
+  }
+  #page > div#hero {
+    min-height: 300px;
+    height: 40vh;
+    background-position: 50% 20%;
+  }
+  #page:first-of-type {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 460px) {
+  #page > div {
+    padding: 2em 1em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.618em;
+  }
+}
